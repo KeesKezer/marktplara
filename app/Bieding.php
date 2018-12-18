@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Bieding extends Model
-{
+{    // manual reference to proper database
+    protected $table = 'bieding';
     // each bieding can only belong to one advertentie
     public function advertenties()
     {
-        return $this->hasMany('App\Advertentie')
+        return $this->belongsTo('App\Advertentie');
     }
 }
