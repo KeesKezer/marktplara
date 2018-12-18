@@ -18,8 +18,12 @@ class CreateAdvertentieTable extends Migration
             $table->char('titel','100');
             $table->longtext('omschrijving');
             $table->unsignedDecimal('ini_prijs',8,2);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('advertentie', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

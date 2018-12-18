@@ -16,9 +16,14 @@ class CreateBiedingenTable extends Migration
         Schema::create('biedingen', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedDecimal('huidig_bod',10,2);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
+            $table->integer('advertentie_id')->unsigned();
+            $table->timestamp('biedtijd', 0)->nullable();
+        });
+
+        Schema::table('biedingen', function (Blueprint $table) {
             $table->foreign('advertentie_id')->references('id')->on('advertentie');
-            $table->timestamps('biedtijd'); // mag dit?
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
