@@ -27,3 +27,7 @@ Route::get('advertentie', function()
 {
     return View::make('pages.advert');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

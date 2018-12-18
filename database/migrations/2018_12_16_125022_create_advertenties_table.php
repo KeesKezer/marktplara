@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdvertentieTable extends Migration
+class CreateAdvertentiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdvertentieTable extends Migration
      */
     public function up()
     {
-        Schema::create('advertentie', function (Blueprint $table) {
+        Schema::create('advertenties', function (Blueprint $table) {
             $table->increments('id');
             $table->char('titel','100');
             $table->longtext('omschrijving');
@@ -22,7 +22,7 @@ class CreateAdvertentieTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('advertentie', function (Blueprint $table) {
+        Schema::table('advertenties', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -34,6 +34,6 @@ class CreateAdvertentieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advertentie');
+        Schema::dropIfExists('advertenties');
     }
 }

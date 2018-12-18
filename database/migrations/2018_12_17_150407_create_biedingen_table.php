@@ -22,7 +22,7 @@ class CreateBiedingenTable extends Migration
         });
 
         Schema::table('biedingen', function (Blueprint $table) {
-            $table->foreign('advertentie_id')->references('id')->on('advertentie');
+            $table->foreign('advertentie_id')->references('id')->on('advertenties');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
