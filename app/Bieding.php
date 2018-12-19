@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bieding extends Model
 {    // manual reference to proper database
-    protected $table = 'bieding';
+    protected $table = 'biedingen';
     // each bieding can only belong to one advertentie
     public function advertenties()
     {

@@ -17,7 +17,7 @@ Route::get('/', function()
 });
 Route::get('register', function()
 {
-    return View::make('pages.register');
+    return View::make('views.home');
 });
 Route::get('bied', function()
 {
