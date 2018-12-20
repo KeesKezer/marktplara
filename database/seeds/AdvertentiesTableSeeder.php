@@ -15,23 +15,27 @@ class AdvertentiesTableSeeder extends Seeder
              [
                 'titel' => 'Honda 500',
                 'omschrijving' => 'Te koop: Honda 500 uit 1987. In goede staat, met 100.000 km op de teller',
-                'ini_prijs' => '1200'
-             ]
+                'ini_prijs' => '1200',
+                'user_id' => '1'
+            ],
              [
                 'titel' => 'Honda 400',
                 'omschrijving' => 'Te koop: Honda 400 uit 1986. In goede staat, met 100.000 km op de teller',
-                'ini_prijs' => '1100'
-             ]
+                'ini_prijs' => '1100',
+                'user_id' => '2'
+            ],
              [
                 'titel' => 'Honda 300',
                 'omschrijving' => 'Te koop: Honda 300 uit 1985. In goede staat, met 100.000 km op de teller',
-                'ini_prijs' => '1200'
-             ]
+                'ini_prijs' => '1200',
+                'user_id' => '1'
+            ],
              [
                 'titel' => 'Honda 200',
                 'omschrijving' => 'Te koop: Honda 200 uit 1984. In goede staat, met 100.000 km op de teller',
-                'ini_prijs' => '1000'
-             ]
+                'ini_prijs' => '1000',
+                'user_id' => '2'
+            ],
         ]);
     }
 }

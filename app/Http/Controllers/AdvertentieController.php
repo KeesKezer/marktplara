@@ -26,7 +26,7 @@ class AdvertentieController extends Controller
         $advertentie->titel     = Input::get('advertentieTitel');
         $advertentie->omschrijving     = Input::get('advertentieOmschrijving');
         $advertentie->ini_prijs     = Input::get('advertentieIni_prijs');
-        
+
         $advertentie->save();
 
         // redirect

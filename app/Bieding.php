@@ -11,5 +11,6 @@ class Bieding extends Model
     public function advertenties()
     {
         return $this->belongsTo('App\Advertentie');
+        return $this->belongsTo('App\User');
     }
 }

@@ -9,6 +9,7 @@ class Advertentie extends Model
     //relation: each advertentie can have multiple biedingen
     public function biedingen()
     {    //check if proper foreign key is selected
-        return $this->hasMany('App\bieding'); 
+        return $this->hasMany('App\bieding');
+        return $this->belongsTo('App\User');
     }
 }
