@@ -20,10 +20,10 @@ Route::get('bied', function()
 {
     return View::make('pages.bied');
 });
-Route::get('advertentie', function()
-{
-    return View::make('pages.advert');
-});
+Route::get('advertentie', 'AdvertentieController@create');
+Route::resource('Pages','Advertentiecontroller');
+
+
 
 Auth::routes();
 

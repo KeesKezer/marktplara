@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertentieController extends Controller
    {
@@ -17,20 +18,23 @@ class AdvertentieController extends Controller
             ->with('advertentie', $advertentie);
     }
 
-    public function create() {
-        return \View::make('advertentie.create');
+    public function create()
+    {
+
+        return \View::make('pages.advert');
     }
 
-    public function store() {
+    public function store(Request $Request) {
         // store new advertentie
-        $advertentie = new \App\advertentie;
-        $advertentie->titel     = Input::get('advertentieTitel');
+        $advertentie = new \App\Advertentie;
+        $advertentie->titel            = Input::get('advertentieTitel');
         $advertentie->omschrijving     = Input::get('advertentieOmschrijving');
-        $advertentie->ini_prijs     = Input::get('advertentieIni_prijs');
+        $advertentie->ini_prijs        = Input::get('advertentieIni_prijs');
+        $advertentie->user_id          = Auth::user()->id;
 
         $advertentie->save();
 
         // redirect
-        return \Redirect::to('advertentie');
+        return \Redirect::to('/');
     }
 }
