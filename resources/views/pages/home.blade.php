@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-@foreach($advertenties as $key => $value)
+@foreach($advertentie as $key => $value)
 {{$value-> id}}
 {{$value-> omschrijving}}
 {{$value-> ini_prijs}}

@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class AdvertentieController extends Controller
-{
+   {
     public function index() {
         // get all the advertenties
         $advertentie = \App\Advertentie::all();
 
         // load the view and pass the customers
-        return \View::make('advertentie.index')
+        // return view('pages.home', ['advertentie' => $advertentie]);
+        return \View::make('pages.home')
             ->with('advertentie', $advertentie);
     }
 

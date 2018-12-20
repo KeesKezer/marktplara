@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-    return View::make('pages.home');
-});
+Route::get('/', 'AdvertentieController@index');
 Route::get('register', function()
 {
     return View::make('views.home');
